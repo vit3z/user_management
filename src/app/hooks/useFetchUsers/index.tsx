@@ -29,7 +29,7 @@ const useFetchUsers = () => {
       } catch (error) {
         setError(`${error}`);
       } finally {
-        setLoading(true);
+        setLoading(false);
       }
     };
     fetchUsers();
