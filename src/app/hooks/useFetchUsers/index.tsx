@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { UserInformationProps } from "@/consts/interfaces";
 
 const useFetchUsers = () => {
-  const [users, setUsers] = useState<any>(null);
+  const [users, setUsers] = useState<UserInformationProps[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
