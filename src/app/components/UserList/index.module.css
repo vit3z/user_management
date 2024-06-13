@@ -48,6 +48,9 @@
     flex-direction: column;
     justify-content: space-around;
     border-bottom: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-top: 1px solid rgb(228, 228, 228);
+    border-left: 1px solid rgb(228, 228, 228);
     padding-bottom: 4px;
   }
 
