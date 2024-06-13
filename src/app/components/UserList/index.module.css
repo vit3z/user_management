@@ -1,3 +1,9 @@
+.userListDisplayLoadingContainer {
+  margin: 24px auto;
+  display: flex;
+  justify-content: center;
+}
+
 .userListDisplayContainer {
   width: 100%;
   margin-top: 16px;
@@ -40,6 +46,11 @@
 }
 .userDisplayItem {
   width: 30%;
+}
+
+.userListErrorMessage {
+  color: red;
+  margin: 8px auto;
 }
 
 @media (max-width: 768px) {

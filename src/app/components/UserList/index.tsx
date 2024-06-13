@@ -29,8 +29,8 @@ const UserList: React.FC<any> = () => {
           })}
         </ul>
       )}
-      {loading && <LoadingSpinner />}
-      {error && <p>{error}</p>}
+      {loading && <div className={styles.userListDisplayLoadingContainer}><LoadingSpinner /></div>}
+      {error && <p className={styles.userListErrorMessage}>{error}</p>}
     </div>
   );
 };
