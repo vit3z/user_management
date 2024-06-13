@@ -1,0 +1,1 @@
+export const userFetchUrl = `https://jsonplaceholder.typicode.com/users`;

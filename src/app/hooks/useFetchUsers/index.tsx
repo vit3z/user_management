@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { UserInformationProps } from "@/consts/interfaces";
+import { userFetchUrl } from "@/consts/urls";
 
 const useFetchUsers = () => {
   const [users, setUsers] = useState<UserInformationProps[] | null>(null);
@@ -10,7 +11,7 @@ const useFetchUsers = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          `https://jsonplaceholder.typicode.com/users`,
+          `${userFetchUrl}`,
           {
             method: "GET",
             headers: {
