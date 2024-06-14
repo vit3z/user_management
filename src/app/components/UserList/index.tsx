@@ -6,6 +6,8 @@ import useFetchUsers from "@/app/hooks/useFetchUsers";
 import { UserInformationProps } from "@/consts/interfaces";
 import LoadingSpinner from "../LoadingSpinner";
 import UserDetails from "../UserDetails";
+import Image from "next/image";
+import ProfileImage from "../../../../public/Profile_avatar_placeholder_large.png";
 
 const UserList: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
@@ -27,13 +29,21 @@ const UserList: React.FC = () => {
       {!loading && !error && (
         <ul>
           <div className={styles.userDisplayBasicInfoTitle}>
+            <p className={styles.userDisplayItemBlank}>&nbsp;</p>
             <p className={styles.userDisplayItemTitle}>Name</p>
             <p className={styles.userDisplayItemTitle}>Email</p>
-            <p className={styles.userDisplayItemTitle}>Phone number</p>
+            <p className={styles.userDisplayItemTitle}>Phone Number</p>
           </div>
           {users?.map((user: UserInformationProps, index: number) => {
             return (
               <div className={styles.userDisplayBasicInfo} key={`user-management-list-${index}-${user.id}`} onClick={() => handleOpenModal(user)}>
+                <Image
+                  className={styles.userDetailsModalUserAvatar}
+                  src={ProfileImage}
+                  width={24}
+                  height={24}
+                  alt="User Avatar"
+                />
                 <p className={styles.userDisplayItem}>{user.name}</p>
                 <p className={styles.userDisplayItem}>{user.email}</p>
                 <p className={styles.userDisplayItem}>{user.phone}</p>
