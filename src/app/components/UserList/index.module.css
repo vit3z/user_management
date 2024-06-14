@@ -51,6 +51,7 @@
 }
 
 .userDisplayItemTitle {
+  cursor: pointer;
   width: 30%;
 }
 .userDisplayItem {
