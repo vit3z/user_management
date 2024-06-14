@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetails renders all elements when needed renders the component when props are passed 1`] = `
+<div>
+  <div
+    class="userDetailsModalOverlay"
+  >
+    <div
+      class="userDetailsModalContent"
+    >
+      <div
+        class="userDetailsModalHeaderSection"
+      >
+        <img
+          alt="User Avatar"
+          class="userDetailsModalUserAvatar"
+          data-nimg="1"
+          decoding="async"
+          height="50"
+          loading="lazy"
+          src="/_next/image?url=%2Fimg.jpg&w=128&q=75"
+          srcset="/_next/image?url=%2Fimg.jpg&w=64&q=75 1x, /_next/image?url=%2Fimg.jpg&w=128&q=75 2x"
+          style="color: transparent;"
+          width="50"
+        />
+        <h2
+          class="userDetailsModalContentUserName"
+        >
+          John
+        </h2>
+        <a
+          class="userDetailsModalContentUserWebsite"
+          href="https://google.com "
+          target="_blank"
+        >
+          test.com
+        </a>
+        <hr
+          class="userDetailsModalDivider"
+        />
+      </div>
+      <div
+        class="userDetailsModalBodySection"
+      >
+        <h3
+          class="userDetailsModalContentSectionTitle"
+        >
+          Contact Details
+        </h3>
+        <p
+          class="userDetailsModalContentSectionInfo"
+        >
+          <a
+            href="mailto:jd@jd.jd"
+          >
+            Email: 
+            <b>
+              jd@jd.jd
+            </b>
+             
+          </a>
+        </p>
+        <p
+          class="userDetailsModalContentSectionInfo"
+        >
+          <a
+            href="tel:555-5555"
+          >
+            Phone: 
+            <b>
+              555-5555
+            </b>
+          </a>
+        </p>
+        <p
+          class="userDetailsModalContentSectionInfo"
+        >
+          Username: 
+          <b>
+            Doe
+          </b>
+        </p>
+        <h3
+          class="userDetailsModalContentSectionTitle"
+        >
+          Company
+          : 
+          <span
+            class="userDetailsModalContentSectionInfo"
+          >
+            Company
+          </span>
+        </h3>
+        <p
+          class="userDetailsModalContentSectionInfo"
+        >
+          Summary: 
+          <b>
+            We do it
+          </b>
+        </p>
+        <p
+          class="userDetailsModalContentSectionInfo"
+        >
+          Motto:
+           
+          <span
+            class="userDetailsModalContentSectionInfoQuote"
+          >
+            '
+            Phrase
+            '
+          </span>
+        </p>
+        <h3
+          class="userDetailsModalContentSectionTitle"
+        >
+          Address
+        </h3>
+        <p
+          class="userDetailsModalContentSectionInfo"
+        >
+          <b>
+            11 Test Avenue, London
+          </b>
+        </p>
+        <p
+          class="userDetailsModalContentSectionInfo"
+        >
+          <b>
+            EC1
+          </b>
+        </p>
+        <p
+          class="userDetailsModalContentSectionInfoSmallText"
+        >
+          test lat, test lng
+        </p>
+        <button
+          class="userDetailsModalCloseButton"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
