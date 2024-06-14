@@ -56,7 +56,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({ isOpen, onClose, data }) => {
 
         <div className={styles.userDetailsModalBodySection}>
           <h3 className={styles.userDetailsModalContentSectionTitle}>
-            Contact details
+            Contact Details
           </h3>
           <p className={styles.userDetailsModalContentSectionInfo}>
             <a href={`mailto:${data.email}`}>
