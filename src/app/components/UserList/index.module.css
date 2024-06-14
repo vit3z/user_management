@@ -4,9 +4,25 @@
   justify-content: center;
 }
 
+.searchAddContainer {
+  margin-top: 8px;
+}
+
+.userDisplaySearchBar {
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid aliceblue;
+  width: 250px;
+  padding: 0px 4px;
+}
+
+.userDisplaySearchBar:focus { 
+  outline: 1px solid#17D3FF !important;
+}
+
 .userListDisplayContainer {
   width: 100%;
-  margin-top: 16px;
+  margin-top: 8px;
   background-color: aliceblue;
   border-radius: 8px;
 }
@@ -23,7 +39,7 @@
 }
 
 .userDisplayBasicInfo:hover {
-  background-color: rgb(220, 228, 236);
+  background-color: rgb(229, 237, 245);
   -webkit-transition: background-color 100ms ease-in;
   -ms-transition: background-color 100ms ease-in;
   transition: background-color 100ms ease-in;
@@ -59,11 +75,19 @@
 }
 
 .userListErrorMessage {
-  color: red;
+  color: #FF5C17;
   margin: 8px auto;
 }
 
+.noUsersFound {
+  margin: 8px;
+}
+
 @media (max-width: 768px) {
+  .userDisplaySearchBar {
+    width: 100%;
+  }
+
   .userListDisplayContainer {
     width: 100%;
     margin-top: 16px;

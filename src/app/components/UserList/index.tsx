@@ -24,6 +24,7 @@ const UserList: React.FC = () => {
     setUserDetails(user);
     setModalOpen(true);
   };
+
   const handleCloseModal = () => {
     setUserDetails(null);
     setModalOpen(false);
@@ -108,68 +109,90 @@ const UserList: React.FC = () => {
     setUserData(clonedUserList);
   };
 
-  return (
-    <div className={styles.userListDisplayContainer}>
-      {!loading && !error && (
-        <ul>
-          <div className={styles.userDisplayBasicInfoTitle}>
-            <p className={styles.userDisplayItemBlank}>&nbsp;</p>
-            <p
-              className={styles.userDisplayItemTitle}
-              onClick={() => handleSortBy("name")}
-            >
-              {columnNameGenerator("Name", currentSort)}
-            </p>
-            <p
-              className={styles.userDisplayItemTitle}
-              onClick={() => handleSortBy("email")}
-            >
-              {columnNameGenerator("Email", currentSort)}
-            </p>
-            <p
-              className={styles.userDisplayItemTitle}
-              onClick={() => handleSortBy("phoneNum")}
-            >
-              {columnNameGenerator("Phone Number", currentSort)}
-            </p>
-          </div>
-          {userData?.map((user: UserInformationProps, index: number) => {
-            return (
-              <div
-                className={styles.userDisplayBasicInfo}
-                key={`user-management-list-${index}-${user.id}`}
-                onClick={() => handleOpenModal(user)}
-              >
-                <Image
-                  className={styles.userDetailsModalUserAvatar}
-                  src={ProfileImage}
-                  width={24}
-                  height={24}
-                  alt="User Avatar"
-                />
-                <p className={styles.userDisplayItem}>{user.name}</p>
-                <p className={styles.userDisplayItem}>{user.email}</p>
-                <p className={styles.userDisplayItem}>{user.phone}</p>
-              </div>
-            );
-          })}
-        </ul>
-      )}
-      {loading && (
-        <div className={styles.userListDisplayLoadingContainer}>
-          <LoadingSpinner />
-        </div>
-      )}
-      {error && <p className={styles.userListErrorMessage}>{error}</p>}
+  const handleSearchForUser = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if(e.target.value !== "") {
+      const newResults = users?.filter((el: UserInformationProps) => {
+        return el.name.toLowerCase().includes(e.target.value.toLowerCase());
+      })
+      if(newResults && newResults?.length > 0) {
+        setUserData(newResults);
+      } else {
+        setUserData([]);
+      }
+      setCurrentSort("");
+    } else {
+      setUserData(users);
+    }
+  }
 
-      {userDetails && (
-        <UserDetails
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          data={userDetails}
-        />
-      )}
-    </div>
+  return (
+    <>
+      <div className={styles.searchAddContainer}>
+        <input className={styles.userDisplaySearchBar} placeholder="Search User By Name" onChange={(e) => handleSearchForUser(e)}/>
+      </div>
+      <div className={styles.userListDisplayContainer}>
+        {!loading && !error && (
+          <ul>
+            <div className={styles.userDisplayBasicInfoTitle}>
+              <p className={styles.userDisplayItemBlank}>&nbsp;</p>
+              <p
+                className={styles.userDisplayItemTitle}
+                onClick={() => handleSortBy("name")}
+              >
+                {columnNameGenerator("Name", currentSort)}
+              </p>
+              <p
+                className={styles.userDisplayItemTitle}
+                onClick={() => handleSortBy("email")}
+              >
+                {columnNameGenerator("Email", currentSort)}
+              </p>
+              <p
+                className={styles.userDisplayItemTitle}
+                onClick={() => handleSortBy("phoneNum")}
+              >
+                {columnNameGenerator("Phone Number", currentSort)}
+              </p>
+            </div>
+            {userData?.map((user: UserInformationProps, index: number) => {
+              return (
+                <div
+                  className={styles.userDisplayBasicInfo}
+                  key={`user-management-list-${index}-${user.id}`}
+                  onClick={() => handleOpenModal(user)}
+                >
+                  <Image
+                    className={styles.userDetailsModalUserAvatar}
+                    src={ProfileImage}
+                    width={24}
+                    height={24}
+                    alt="User Avatar"
+                  />
+                  <p className={styles.userDisplayItem}>{user.name}</p>
+                  <p className={styles.userDisplayItem}>{user.email}</p>
+                  <p className={styles.userDisplayItem}>{user.phone}</p>
+                </div>
+              );
+            })}
+            {(userData && userData?.length < 1) && <p className={styles.noUsersFound}>No Users Found</p>}
+          </ul>
+        )}
+        {loading && (
+          <div className={styles.userListDisplayLoadingContainer}>
+            <LoadingSpinner />
+          </div>
+        )}
+        {error && <p className={styles.userListErrorMessage}>{error}</p>}
+
+        {userDetails && (
+          <UserDetails
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            data={userDetails}
+          />
+        )}
+      </div>
+    </>
   );
 };
 
