@@ -14,20 +14,81 @@
 .userDetailsModalContent {
   margin: 16px;
   background: white;
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
+.userDetailsModalHeaderSection {
+  padding-top: 16px;
+  border-radius: 8px;
+  background-color: aliceblue;
+}
+
+.userDetailsModalUserAvatar {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.userDetailsModalContentUserName {
+  color: #46596B;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+}
+
+.userDetailsModalContentUserWebsite {
+  color: #46596B;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
+.userDetailsModalBodySection {
+  padding: 16px;
+}
+
+.userDetailsModalContentSectionTitle {
+  color: #46596B;
+  font-weight: 300;
+  margin-top: 16px;
+}
+
+.userDetailsModalContentSectionInfo {
+  color: #4b5b69;
+  font-weight: 400;
+}
+
+.userDetailsModalContentSectionCentered {
+  color: #4b5b69;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+}
+
+.userDetailsModalContentSectionInfoSmallText {
+  color: #606366;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.userDetailsModalDivider {
+  border-top: 1px solid #cecfdb;
+}
+
 .userDetailsModalCloseButton {
-  margin-top: 20px;
-  padding: 10px 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  float: right;
 }
 
 .userDetailsModalCloseButton:hover {
