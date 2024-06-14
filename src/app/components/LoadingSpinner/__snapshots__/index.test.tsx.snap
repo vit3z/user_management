@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders homepage unchanged 1`] = `
+exports[`Loading Spinner renders the loading spinner in a snapshot 1`] = `
 <div>
   <div
     class="userManagementLoader"

@@ -1,7 +1,14 @@
+import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import LoadingSpinner from '.'
  
-it('renders homepage unchanged', () => {
-  const { container } = render(<LoadingSpinner />)
-  expect(container).toMatchSnapshot()
+describe("Loading Spinner", () => {
+  it('renders the loading spinner in a snapshot', () => {
+    const { container } = render(<LoadingSpinner />)
+    expect(container).toMatchSnapshot()
+  })
+  it('renders the spinner', () => {
+    const { container } = render(<LoadingSpinner />);
+    expect(container).toBeInTheDocument();
+  })
 })
