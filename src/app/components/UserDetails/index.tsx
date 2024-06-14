@@ -73,16 +73,17 @@ const UserDetails: React.FC<UserDetailsProps> = ({ isOpen, onClose, data }) => {
           </p>
 
           <h3 className={styles.userDetailsModalContentSectionTitle}>
-            Company
+            Company{": "}
+            <span className={styles.userDetailsModalContentSectionInfo}>{data.company.name}</span>
           </h3>
-          <p className={styles.userDetailsModalContentSectionInfo}>
-            <b>{data.company.name}</b>
-          </p>
           <p className={styles.userDetailsModalContentSectionInfo}>
             Summary: <b>{data.company.bs}</b>
           </p>
           <p className={styles.userDetailsModalContentSectionInfo}>
-            <b>{data.company.catchPhrase}</b>
+            Motto:{" "}
+            <span className={styles.userDetailsModalContentSectionInfoQuote}>
+              &apos;{data.company.catchPhrase}&apos;
+            </span>
           </p>
 
           <h3 className={styles.userDetailsModalContentSectionTitle}>
