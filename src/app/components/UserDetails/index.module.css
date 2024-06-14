@@ -21,8 +21,9 @@
 
 .userDetailsModalHeaderSection {
   padding-top: 16px;
-  border-radius: 8px;
-  background-color: aliceblue;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #FFA817;
 }
 
 .userDetailsModalUserAvatar {
@@ -45,6 +46,10 @@
   display: flex;
   justify-content: center;
   padding-bottom: 8px;
+}
+
+.userDetailsModalDivider {
+  border-top: 1px solid #cecfdb;
 }
 
 .userDetailsModalBodySection {
@@ -75,15 +80,11 @@
   font-size: 12px;
 }
 
-.userDetailsModalDivider {
-  border-top: 1px solid #cecfdb;
-}
-
 .userDetailsModalCloseButton {
   margin-top: 16px;
   margin-bottom: 16px;
   padding: 8px 16px;
-  background-color: #007bff;
+  background-color: #178BFF;
   color: white;
   border: none;
   border-radius: 4px;
@@ -92,7 +93,7 @@
 }
 
 .userDetailsModalCloseButton:hover {
-  background-color: #0056b3;
+  background-color: #1742FF;
   -webkit-transition: background-color 250ms ease-in;
   -ms-transition: background-color 250ms ease-in;
   transition: background-color 250ms ease-in;

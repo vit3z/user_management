@@ -1,9 +1,15 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 4rem;
   min-height: 100vh;
+}
+
+.titleDividerLine {
+  margin-top: 8px;
+  border-image: linear-gradient(45deg, #17D3FF, #D8DCDD) 15;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .description {

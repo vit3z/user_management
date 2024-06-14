@@ -7,9 +7,8 @@
 .userListDisplayContainer {
   width: 100%;
   margin-top: 16px;
-  padding: 8px 16px;
   background-color: aliceblue;
-  border-radius: 16px;
+  border-radius: 8px;
 }
 
 .userDisplayBasicInfo {
@@ -21,17 +20,19 @@
   margin: 8px 0px;
   cursor: pointer;
   padding: 0px 4px;
-  border-radius: 8px;
 }
 
 .userDisplayBasicInfo:hover {
-  background-color: rgb(225, 232, 238);
+  background-color: rgb(220, 228, 236);
   -webkit-transition: background-color 100ms ease-in;
   -ms-transition: background-color 100ms ease-in;
   transition: background-color 100ms ease-in;
 }
 
 .userDisplayBasicInfoTitle {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: rgb(220, 228, 236);
   height: 32px;
   display: flex;
   justify-content: space-between;

@@ -25,7 +25,7 @@ const UserList: React.FC = () => {
   return (
     <div className={styles.userListDisplayContainer}>
       {!loading && !error && (
-        <ul className="">
+        <ul>
           <div className={styles.userDisplayBasicInfoTitle}>
             <p className={styles.userDisplayItemTitle}>Name</p>
             <p className={styles.userDisplayItemTitle}>Email</p>
