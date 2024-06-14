@@ -32,7 +32,7 @@
 .userDisplayBasicInfoTitle {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  background-color: rgb(220, 228, 236);
+  background-color: #FFA817;
   height: 32px;
   display: flex;
   justify-content: space-between;
@@ -40,6 +40,14 @@
   font-weight: bold;
   padding: 0px 4px;
   align-items: center;
+}
+
+.userDetailsModalUserAvatar {
+  border-radius: 50%;
+}
+
+.userDisplayItemBlank {
+  width: 24px;
 }
 
 .userDisplayItemTitle {
@@ -55,10 +63,23 @@
 }
 
 @media (max-width: 768px) {
+  .userListDisplayContainer {
+    width: 100%;
+    margin-top: 16px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+  }
+
+  .userDetailsModalUserAvatar {
+    margin-top: 4px;
+  }
+
   .userDisplayBasicInfo {
-    height: 85px;
+    height: 120px;
     flex-direction: column;
+    background-color: aliceblue;
     justify-content: space-around;
+    border-radius: 8px;
     border-bottom: 1px solid darkgray;
     border-right: 1px solid darkgray;
     border-top: 1px solid rgb(228, 228, 228);
@@ -71,6 +92,8 @@
   }
 
   .userDisplayItem {
+    display: flex;
+    justify-content: center;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
