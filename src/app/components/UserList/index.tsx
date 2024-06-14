@@ -127,7 +127,7 @@ const UserList: React.FC = () => {
 
   return (
     <>
-      <div className={styles.searchAddContainer}>
+      <div className={styles.searchContainer}>
         <input className={styles.userDisplaySearchBar} placeholder="Search User By Name" onChange={(e) => handleSearchForUser(e)}/>
       </div>
       <div className={styles.userListDisplayContainer}>
