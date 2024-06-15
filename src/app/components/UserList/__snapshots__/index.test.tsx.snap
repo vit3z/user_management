@@ -49,7 +49,7 @@ exports[`UserList should render the component 1`] = `
       >
         <img
           alt="User Avatar"
-          class="userDetailsModalUserAvatar"
+          class="userListUserAvatar"
           data-nimg="1"
           decoding="async"
           height="24"
@@ -80,7 +80,7 @@ exports[`UserList should render the component 1`] = `
       >
         <img
           alt="User Avatar"
-          class="userDetailsModalUserAvatar"
+          class="userListUserAvatar"
           data-nimg="1"
           decoding="async"
           height="24"

@@ -162,7 +162,7 @@ const UserList: React.FC = () => {
                   onClick={() => handleOpenModal(user)}
                 >
                   <Image
-                    className={styles.userDetailsModalUserAvatar}
+                    className={styles.userListUserAvatar}
                     src={ProfileImage}
                     width={24}
                     height={24}
