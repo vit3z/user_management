@@ -5,6 +5,11 @@ exports[`UserList should render the component 1`] = `
   <div
     class="searchContainer"
   >
+    <span
+      class="searchContainerIcon"
+    >
+      🔎︎
+    </span>
     <input
       class="userDisplaySearchBar"
       placeholder="Search User By Name"
@@ -26,26 +31,26 @@ exports[`UserList should render the component 1`] = `
           class="userDisplayItemTitle"
         >
           <span>
-            Name
+            NAME ⇅
           </span>
         </p>
         <p
           class="userDisplayItemTitle"
         >
           <span>
-            Email
+            EMAIL ⇅
           </span>
         </p>
         <p
           class="userDisplayItemTitle"
         >
           <span>
-            Phone Number
+            PHONE NUMBER ⇅
           </span>
         </p>
       </div>
       <div
-        class="userDisplayBasicInfo"
+        class="userDisplayBasicInfoEven"
       >
         <img
           alt="User Avatar"
@@ -76,7 +81,7 @@ exports[`UserList should render the component 1`] = `
         </p>
       </div>
       <div
-        class="userDisplayBasicInfo"
+        class="userDisplayBasicInfoOdd"
       >
         <img
           alt="User Avatar"

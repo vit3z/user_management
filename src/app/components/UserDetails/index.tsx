@@ -73,11 +73,10 @@ const UserDetails: React.FC<UserDetailsProps> = ({ isOpen, onClose, data }) => {
           </p>
 
           <h3 className={styles.userDetailsModalContentSectionTitle}>
-            Company{": "}
-            <span className={styles.userDetailsModalContentSectionInfo}>{data.company.name}</span>
+            Company{": "}{data.company.name}
           </h3>
           <p className={styles.userDetailsModalContentSectionInfo}>
-            Summary: <b>{data.company.bs}</b>
+            Summary: {data.company.bs}
           </p>
           <p className={styles.userDetailsModalContentSectionInfo}>
             Motto:{" "}
@@ -90,10 +89,10 @@ const UserDetails: React.FC<UserDetailsProps> = ({ isOpen, onClose, data }) => {
             Address
           </h3>
           <p className={styles.userDetailsModalContentSectionInfo}>
-            <b>{`${data.address.suite} ${data.address.street}, ${data.address.city}`}</b>
+            {`${data.address.suite} ${data.address.street}, ${data.address.city}`}
           </p>
           <p className={styles.userDetailsModalContentSectionInfo}>
-            <b>{data.address.zipcode}</b>
+            {data.address.zipcode}
           </p>
           <p
             className={styles.userDetailsModalContentSectionInfoSmallText}

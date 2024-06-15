@@ -85,19 +85,13 @@ exports[`UserDetails renders all elements when needed renders the component when
         >
           Company
           : 
-          <span
-            class="userDetailsModalContentSectionInfo"
-          >
-            Company
-          </span>
+          Company
         </h3>
         <p
           class="userDetailsModalContentSectionInfo"
         >
           Summary: 
-          <b>
-            We do it
-          </b>
+          We do it
         </p>
         <p
           class="userDetailsModalContentSectionInfo"
@@ -120,16 +114,12 @@ exports[`UserDetails renders all elements when needed renders the component when
         <p
           class="userDetailsModalContentSectionInfo"
         >
-          <b>
-            11 Test Avenue, London
-          </b>
+          11 Test Avenue, London
         </p>
         <p
           class="userDetailsModalContentSectionInfo"
         >
-          <b>
-            EC1
-          </b>
+          EC1
         </p>
         <p
           class="userDetailsModalContentSectionInfoSmallText"

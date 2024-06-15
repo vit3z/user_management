@@ -128,6 +128,7 @@ const UserList: React.FC = () => {
   return (
     <>
       <div className={styles.searchContainer}>
+        <span className={styles.searchContainerIcon}>&#x1F50E;&#xFE0E;</span>
         <input className={styles.userDisplaySearchBar} placeholder="Search User By Name" onChange={(e) => handleSearchForUser(e)}/>
       </div>
       <div className={styles.userListDisplayContainer}>
@@ -157,7 +158,7 @@ const UserList: React.FC = () => {
             {userData?.map((user: UserInformationProps, index: number) => {
               return (
                 <div
-                  className={styles.userDisplayBasicInfo}
+                  className={index%2===0 ? styles.userDisplayBasicInfoEven : styles.userDisplayBasicInfoOdd}
                   key={`user-management-list-${index}-${user.id}`}
                   onClick={() => handleOpenModal(user)}
                 >

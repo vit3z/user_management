@@ -8,6 +8,13 @@
   margin-top: 8px;
 }
 
+.searchContainerIcon {
+  pointer-events: none;
+  position: absolute;
+  margin-left: 220px;
+  margin-top: 5px;
+}
+
 .userDisplaySearchBar {
   height: 32px;
   border-radius: 8px;
@@ -23,23 +30,38 @@
 .userListDisplayContainer {
   width: 100%;
   margin-top: 8px;
-  background-color: aliceblue;
   border-radius: 8px;
 }
 
-.userDisplayBasicInfo {
-  height: 32px;
+.userDisplayBasicInfoEven {
+  height: 40px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  margin: 8px 0px;
   cursor: pointer;
   padding: 0px 4px;
+  background-color: aliceblue;
+}
+.userDisplayBasicInfoEven:hover {
+  background-color: rgb(213, 220, 228);
+  -webkit-transition: background-color 100ms ease-in;
+  -ms-transition: background-color 100ms ease-in;
+  transition: background-color 100ms ease-in;
 }
 
-.userDisplayBasicInfo:hover {
-  background-color: rgb(229, 237, 245);
+.userDisplayBasicInfoOdd {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding: 0px 4px;
+  background-color: rgb(224, 231, 238);
+}
+.userDisplayBasicInfoOdd:hover {
+  background-color: rgb(195, 201, 209);
   -webkit-transition: background-color 100ms ease-in;
   -ms-transition: background-color 100ms ease-in;
   transition: background-color 100ms ease-in;
@@ -54,7 +76,7 @@
   justify-content: space-between;
   flex-direction: row;
   font-weight: bold;
-  padding: 0px 4px;
+  padding: 4px 4px 0px 4px;
   align-items: center;
 }
 
@@ -71,6 +93,8 @@
 .userDisplayItemTitle {
   cursor: pointer;
   width: 30%;
+  font-size: 18px;
+  font-weight: 450;
 }
 .userDisplayItem {
   width: 30%;
@@ -90,6 +114,10 @@
     width: 100%;
   }
 
+  .searchContainerIcon {
+    margin-left: 85%;
+  }
+
   .userListDisplayContainer {
     width: 100%;
     margin-top: 16px;
@@ -103,7 +131,8 @@
     margin-right: 0px;
   }
 
-  .userDisplayBasicInfo {
+  .userDisplayBasicInfoEven,
+  .userDisplayBasicInfoOdd {
     height: 120px;
     flex-direction: column;
     background-color: aliceblue;
@@ -127,4 +156,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }  
+}
+
+@media (max-width: 580px) {
+  .searchContainerIcon {
+    margin-left: 75%;
+  }
+}
+
+@media (max-width: 375px) {
+  .searchContainerIcon {
+    margin-left: 70%;
+  }
 }
