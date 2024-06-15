@@ -100,6 +100,10 @@
   width: 20%;
 }
 
+.userDisplayItemCategory {
+  display: none;
+}
+
 .userListErrorMessage {
   color: #FF5C17;
   margin: 8px auto;
@@ -157,6 +161,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }  
+
+  .userDisplayItemCategory {
+    display: inherit;
+    font-weight: 500;
+  }
 }
 
 @media (max-width: 580px) {

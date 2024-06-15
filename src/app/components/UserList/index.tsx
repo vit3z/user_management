@@ -215,10 +215,30 @@ const UserList: React.FC = () => {
                     height={24}
                     alt="User Avatar"
                   />
-                  <p className={styles.userDisplayItem}>{user.name}</p>
-                  <p className={styles.userDisplayItem}>{user.username}</p>
-                  <p className={styles.userDisplayItem}>{user.email}</p>
-                  <p className={styles.userDisplayItem}>{user.phone}</p>
+                  <p className={styles.userDisplayItem}>
+                    <span className={styles.userDisplayItemCategory}>
+                      Name:&nbsp;
+                    </span>
+                    {user.name}
+                  </p>
+                  <p className={styles.userDisplayItem}>
+                    <span className={styles.userDisplayItemCategory}>
+                      Username:&nbsp;
+                    </span>
+                    {user.username}
+                  </p>
+                  <p className={styles.userDisplayItem}>
+                    <span className={styles.userDisplayItemCategory}>
+                      Email:&nbsp;
+                    </span>
+                    {user.email}
+                  </p>
+                  <p className={styles.userDisplayItem}>
+                    <span className={styles.userDisplayItemCategory}>
+                      Phone Number:&nbsp;
+                    </span>
+                    {user.phone}
+                  </p>
                 </div>
               );
             })}
