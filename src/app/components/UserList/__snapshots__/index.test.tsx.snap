@@ -38,6 +38,13 @@ exports[`UserList should render the component 1`] = `
           class="userDisplayItemTitle"
         >
           <span>
+            USERNAME ⇅
+          </span>
+        </p>
+        <p
+          class="userDisplayItemTitle"
+        >
+          <span>
             EMAIL ⇅
           </span>
         </p>
@@ -72,6 +79,11 @@ exports[`UserList should render the component 1`] = `
         <p
           class="userDisplayItem"
         >
+          Bret
+        </p>
+        <p
+          class="userDisplayItem"
+        >
           Sincere@april.biz
         </p>
         <p
@@ -99,6 +111,11 @@ exports[`UserList should render the component 1`] = `
           class="userDisplayItem"
         >
           Ervin Howell
+        </p>
+        <p
+          class="userDisplayItem"
+        >
+          Antonette
         </p>
         <p
           class="userDisplayItem"

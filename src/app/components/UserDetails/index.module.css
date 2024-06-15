@@ -112,7 +112,7 @@
   transition: background-color 250ms ease-in;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .userDetailsModalContent {
     width: 80%;
     display: flex;

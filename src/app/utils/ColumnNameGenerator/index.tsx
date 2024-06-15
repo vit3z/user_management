@@ -7,6 +7,10 @@ export const columnNameGenerator = (type: string, currentSort: string): JSX.Elem
       if(currentSort === "nameAsc") return <span>NAME &#8593;</span>;
       if(currentSort === "nameDesc") return <span>NAME &#8595;</span>;
       return <span>NAME &#8645;</span>;
+      case "Username":
+        if(currentSort === "usernameAsc") return <span>USERNAME &#8593;</span>;
+        if(currentSort === "usernameDesc") return <span>USERNAME &#8595;</span>;
+        return <span>USERNAME &#8645;</span>;
     case "Email":
       if(currentSort === "emailAsc") return <span>EMAIL &#8593;</span>;
       if(currentSort === "emailDesc") return <span>EMAIL &#8595;</span>;

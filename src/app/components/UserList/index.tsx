@@ -65,6 +65,28 @@ const UserList: React.FC = () => {
           setCurrentSort("nameAsc");
         }
         break;
+      case "username":
+        clonedUserList.sort(
+          (a: UserInformationProps, b: UserInformationProps) => {
+            let usernameA = a.username.toLowerCase();
+            let usernameB = b.username.toLowerCase();
+
+            if (usernameA > usernameB) return 1;
+            if (usernameA < usernameB) return -1;
+            return 0;
+          }
+        );
+        if(currentSort !== "usernameAsc" && currentSort !== "usernameDesc") {
+          setCurrentSort("usernameAsc");
+        }
+        if(currentSort === "usernameAsc") {
+          setCurrentSort("usernameDesc");
+          clonedUserList.reverse();
+        }
+        if(currentSort === "usernameDesc") {
+          setCurrentSort("usernameAsc");
+        }
+        break;
       case "email":
         clonedUserList.sort(
           (a: UserInformationProps, b: UserInformationProps) => {
@@ -158,6 +180,12 @@ const UserList: React.FC = () => {
               </p>
               <p
                 className={styles.userDisplayItemTitle}
+                onClick={() => handleSortBy("username")}
+              >
+                {columnNameGenerator("Username", currentSort)}
+              </p>
+              <p
+                className={styles.userDisplayItemTitle}
                 onClick={() => handleSortBy("email")}
               >
                 {columnNameGenerator("Email", currentSort)}
@@ -188,6 +216,7 @@ const UserList: React.FC = () => {
                     alt="User Avatar"
                   />
                   <p className={styles.userDisplayItem}>{user.name}</p>
+                  <p className={styles.userDisplayItem}>{user.username}</p>
                   <p className={styles.userDisplayItem}>{user.email}</p>
                   <p className={styles.userDisplayItem}>{user.phone}</p>
                 </div>

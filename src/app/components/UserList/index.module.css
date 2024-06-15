@@ -92,12 +92,12 @@
 
 .userDisplayItemTitle {
   cursor: pointer;
-  width: 30%;
+  width: 20%;
   font-size: 18px;
   font-weight: 450;
 }
 .userDisplayItem {
-  width: 30%;
+  width: 20%;
 }
 
 .userListErrorMessage {
@@ -109,7 +109,7 @@
   margin: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
   .userDisplaySearchBar {
     width: 100%;
   }
