@@ -42,7 +42,7 @@ describe('useFetchUsers', () => {
     await waitFor(() => expect(result.current).toMatchObject({ users: null, loading: false, error: "Error: User fetch failed" }));
   });
 
-  it.skip('should handle network error', async () => {
+  it('should handle network error', async () => {
     (fetch as jest.Mock).mockRejectedValueOnce(new Error('Network error'));
 
     const { result } = renderHook(() => useFetchUsers());
