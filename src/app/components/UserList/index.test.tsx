@@ -63,6 +63,7 @@ describe("UserList", () => {
   const mockUseFetchUsers = jest.mocked(useFetchUsers);
 
   beforeEach(() => {
+    jest.clearAllMocks();
     mockUseFetchUsers.mockReturnValue({
       users: mockUsers,
       error: null,
@@ -145,7 +146,7 @@ describe("UserList", () => {
   it("should sort users by name in asc order when the appropriate element is clicked", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText(/Name ⇅/i));
+    fireEvent.click(screen.getAllByText(/Name ⇅/i)[0]);
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(/Ervin Howell|Leanne Graham/);
@@ -157,8 +158,8 @@ describe("UserList", () => {
   it("should sort users by name in desc order when the appropriate element is clicked twice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText(/Name ⇅/i));
-    fireEvent.click(screen.getByText(/Name ↑/i));
+    fireEvent.click(screen.getAllByText(/Name ⇅/i)[0]);
+    fireEvent.click(screen.getAllByText(/Name ↑/i)[0]);
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(/Ervin Howell|Leanne Graham/);
@@ -170,14 +171,53 @@ describe("UserList", () => {
   it("should sort users by name in asc order when the appropriate element is clicked thrice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText(/Name ⇅/i));
-    fireEvent.click(screen.getByText(/Name ↑/i));
-    fireEvent.click(screen.getByText(/Name ↓/i));
+    fireEvent.click(screen.getAllByText(/Name ⇅/i)[0]);
+    fireEvent.click(screen.getAllByText(/Name ↑/i)[0]);
+    fireEvent.click(screen.getAllByText(/Name ↓/i)[0]);
 
     await waitFor(() => {
-      const sortedUsers = screen.getAllByText(/Ervin Howell|Leanne Graham/);
-      expect(sortedUsers[0]).toHaveTextContent("Ervin Howell");
-      expect(sortedUsers[1]).toHaveTextContent("Leanne Graham");
+      const sortedUsers = screen.getAllByText(/Antonette|Bret/);
+      expect(sortedUsers[0]).toHaveTextContent("Antonette");
+      expect(sortedUsers[1]).toHaveTextContent("Bret");
+    });
+  });
+
+  it("should sort users by usernamename in asc order when the appropriate element is clicked", async () => {
+    render(<UserList />);
+
+    fireEvent.click(screen.getAllByText(/Username ⇅/i)[0]);
+
+    await waitFor(() => {
+      const sortedUsers = screen.getAllByText(/Antonette|Bret/);
+      expect(sortedUsers[0]).toHaveTextContent("Antonette");
+      expect(sortedUsers[1]).toHaveTextContent("Bret");
+    });
+  });
+
+  it("should sort users by usernamename in desc order when the appropriate element is clicked twice", async () => {
+    render(<UserList />);
+
+    fireEvent.click(screen.getAllByText(/Username ⇅/i)[0]);
+    fireEvent.click(screen.getAllByText(/Username ↑/i)[0]);
+
+    await waitFor(() => {
+      const sortedUsers = screen.getAllByText(/Antonette|Bret/);
+      expect(sortedUsers[0]).toHaveTextContent("Bret");
+      expect(sortedUsers[1]).toHaveTextContent("Antonette");
+    });
+  });
+
+  it("should sort users by usernamename in asc order when the appropriate element is clicked thrice", async () => {
+    render(<UserList />);
+
+    fireEvent.click(screen.getAllByText(/Username ⇅/i)[0]);
+    fireEvent.click(screen.getAllByText(/Username ↑/i)[0]);
+    fireEvent.click(screen.getAllByText(/Username ↓/i)[0]);
+
+    await waitFor(() => {
+      const sortedUsers = screen.getAllByText(/Antonette|Bret/);
+      expect(sortedUsers[0]).toHaveTextContent("Antonette");
+      expect(sortedUsers[1]).toHaveTextContent("Bret");
     });
   });
 
@@ -272,27 +312,24 @@ describe("UserList", () => {
   });
 
   it("should open the details modal when the user clicks on a data point", async () => {
-    render(<UserList />);
+    const {container} = render(<UserList />);
 
     fireEvent.click(screen.getByText("Leanne Graham"));
 
     await waitFor(() => {
-      const modalUserName = screen.queryByText("Bret");
-
-      expect(modalUserName).toBeInTheDocument();
+      expect(container.getElementsByClassName('userDetailsModalContent').length).toBe(1);
     });
   });
 
   it("should handle the closing of the modal", async() => {
-    render(<UserList />);
+    const {container} = render(<UserList />);
 
     fireEvent.click(screen.getByText("Leanne Graham"));
 
     await waitFor(() => {
-      const modalUserName = screen.queryByText("Bret");
-      expect(modalUserName).toBeInTheDocument();
+      expect(container.getElementsByClassName('userDetailsModalContent').length).toBe(1);
       fireEvent.click(screen.getByText("Close"));
-      expect(modalUserName).not.toBeInTheDocument();
+      expect(container.getElementsByClassName('userDetailsModalContent').length).toBe(0);
     });
   });
 });
