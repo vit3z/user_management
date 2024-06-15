@@ -74,21 +74,41 @@ exports[`UserList should render the component 1`] = `
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Name: 
+          </span>
           Leanne Graham
         </p>
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Username: 
+          </span>
           Bret
         </p>
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Email: 
+          </span>
           Sincere@april.biz
         </p>
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Phone Number: 
+          </span>
           1-770-736-8031 x56442
         </p>
       </div>
@@ -110,21 +130,41 @@ exports[`UserList should render the component 1`] = `
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Name: 
+          </span>
           Ervin Howell
         </p>
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Username: 
+          </span>
           Antonette
         </p>
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Email: 
+          </span>
           Shanna@melissa.tv
         </p>
         <p
           class="userDisplayItem"
         >
+          <span
+            class="userDisplayItemCategory"
+          >
+            Phone Number: 
+          </span>
           010-692-6593 x09125
         </p>
       </div>
