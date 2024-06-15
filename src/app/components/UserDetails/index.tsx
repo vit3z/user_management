@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./index.module.css";
 import { UserInformationProps } from "@/consts/interfaces";
 import Image from "next/image";
@@ -10,6 +10,10 @@ interface UserDetailsProps {
   data: UserInformationProps;
 }
 
+  // We have three methods of closing the modal:
+  // - Clicking the close button
+  // - Clicking outside the modal
+  // - Pressing Escape on our keyboard; for which we add an event handler (which we remove when the component unmounts)
 const UserDetails: React.FC<UserDetailsProps> = ({ isOpen, onClose, data }) => {
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -45,7 +49,7 @@ const UserDetails: React.FC<UserDetailsProps> = ({ isOpen, onClose, data }) => {
             {data.name}
           </h2>
           <a
-            href={`https://google.com `}
+            href={`https://${data.website}`}
             target="_blank"
             className={styles.userDetailsModalContentUserWebsite}
           >

@@ -30,7 +30,7 @@ exports[`UserDetails renders all elements when needed renders the component when
         </h2>
         <a
           class="userDetailsModalContentUserWebsite"
-          href="https://google.com "
+          href="https://test.com"
           target="_blank"
         >
           test.com

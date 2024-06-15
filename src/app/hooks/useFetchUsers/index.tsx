@@ -1,3 +1,6 @@
+// This custom hook is used for fetching user data
+// It outputs the data, any erros we received, and the current loading state (which we use to display the spinner)
+
 import { useState, useEffect } from "react";
 import { UserInformationProps } from "@/consts/interfaces";
 import { userFetchUrl } from "@/consts/urls";

@@ -20,6 +20,7 @@ const UserList: React.FC = () => {
 
   const { users, error, loading } = useFetchUsers();
 
+  // Clicking on a user in the table will open up a modal with all the users's details
   const handleOpenModal = (user: UserInformationProps) => {
     setUserDetails(user);
     setModalOpen(true);
@@ -30,10 +31,15 @@ const UserList: React.FC = () => {
     setModalOpen(false);
   };
 
+  // We store the userData in a state variable so we can perform searching and filtering on it without modifying the original list
   useEffect(() => {
     setUserData(users);
   }, [users]);
 
+  // In this function we handle user sorting
+  // We store the current sort type in the currentSort variable; and check it in this function
+  // By default the table is unsorted
+  // First click on any Tab title will sort the table in Ascending order based on the category
   const handleSortBy = (sortParam: string) => {
     const clonedUserList = JSON.parse(JSON.stringify(userData));
     switch (sortParam) {
@@ -109,6 +115,10 @@ const UserList: React.FC = () => {
     setUserData(clonedUserList);
   };
 
+  // This function handles User searches
+  // When we start typing a users's name, we search through the list of users for any users whose name has the substring the user entered
+  // Removing the input will show the initial list
+  // Entering a substring which doesn't exist will show a "No Users Found" message
   const handleSearchForUser = (e: React.ChangeEvent<HTMLInputElement>) => {
     if(e.target.value !== "") {
       const newResults = users?.filter((el: UserInformationProps) => {
@@ -129,7 +139,11 @@ const UserList: React.FC = () => {
     <>
       <div className={styles.searchContainer}>
         <span className={styles.searchContainerIcon}>&#x1F50E;&#xFE0E;</span>
-        <input className={styles.userDisplaySearchBar} placeholder="Search User By Name" onChange={(e) => handleSearchForUser(e)}/>
+        <input
+          className={styles.userDisplaySearchBar}
+          placeholder="Search User By Name"
+          onChange={(e) => handleSearchForUser(e)}
+        />
       </div>
       <div className={styles.userListDisplayContainer}>
         {!loading && !error && (
@@ -158,7 +172,11 @@ const UserList: React.FC = () => {
             {userData?.map((user: UserInformationProps, index: number) => {
               return (
                 <div
-                  className={index%2===0 ? styles.userDisplayBasicInfoEven : styles.userDisplayBasicInfoOdd}
+                  className={
+                    index % 2 === 0
+                      ? styles.userDisplayBasicInfoEven
+                      : styles.userDisplayBasicInfoOdd
+                  }
                   key={`user-management-list-${index}-${user.id}`}
                   onClick={() => handleOpenModal(user)}
                 >
@@ -175,7 +193,9 @@ const UserList: React.FC = () => {
                 </div>
               );
             })}
-            {(userData && userData?.length < 1) && <p className={styles.noUsersFound}>No Users Found</p>}
+            {userData && userData?.length < 1 && (
+              <p className={styles.noUsersFound}>No Users Found</p>
+            )}
           </ul>
         )}
         {loading && (
@@ -183,7 +203,12 @@ const UserList: React.FC = () => {
             <LoadingSpinner />
           </div>
         )}
-        {error && <p className={styles.userListErrorMessage}>{error}</p>}
+        {error && (
+          <div className={styles.userListErrorMessage}>
+            <p>{error}</p>
+            <p>Plase try again later.</p>
+          </div>
+        )}
 
         {userDetails && (
           <UserDetails
