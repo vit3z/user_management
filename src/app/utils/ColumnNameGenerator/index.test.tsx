@@ -4,10 +4,10 @@ import { columnNameGenerator } from '.'
 
 describe('columnNameGenerator', () => {
   it('should render Name with ascending arrow', () => {
-    const { getByText, queryByText } = render(columnNameGenerator('Name', 'nameAsc'));
+    render(columnNameGenerator('Name', 'nameAsc'));
     const name = screen.getByText(/Name/i);
-    const symbol = screen.getByText(/▲/i);
-    const symbolFalse = screen.queryByText(/▼/i);
+    const symbol = screen.getByText(/↑/i);
+    const symbolFalse = screen.queryByText(/↓/i);
 
     expect(name).toBeInTheDocument();
     expect(symbol).toBeInTheDocument();
@@ -15,21 +15,21 @@ describe('columnNameGenerator', () => {
   });
 
   it('should render Name with descending arrow', () => {
-    const { getByText, queryByText } = render(columnNameGenerator('Name', 'nameDesc'));
+    render(columnNameGenerator('Name', 'nameDesc'));
     const name = screen.getByText(/Name/i);
-    const symbol = screen.getByText(/▼/i);
-    const symbolFalse = screen.queryByText(/▲/i);
+    const symbol = screen.getByText(/↓/i);
+    const symbolFalse = screen.queryByText(/↑/i);
 
     expect(name).toBeInTheDocument();
     expect(symbol).toBeInTheDocument();
     expect(symbolFalse).not.toBeInTheDocument();
   });
 
-  it('should render Name without arrow', () => {
-    const { getByText } = render(columnNameGenerator('Name', ''));
-    const name = screen.getByText(/Name/i);
-    const symbol1 = screen.queryByText(/▼/i);
-    const symbol2 = screen.queryByText(/▲/i);
+  it('should render Name with both arrows', () => {
+    render(columnNameGenerator('Name', ''));
+    const name = screen.getByText(/Name ⇅/i);
+    const symbol1 = screen.queryByText(/↓/i);
+    const symbol2 = screen.queryByText(/↑/i);
 
     expect(name).toBeInTheDocument();
     expect(symbol1).not.toBeInTheDocument();
@@ -37,10 +37,10 @@ describe('columnNameGenerator', () => {
   });
 
   it('should render Email with ascending arrow', () => {
-    const { getByText } = render(columnNameGenerator('Email', 'emailAsc'));
+    render(columnNameGenerator('Email', 'emailAsc'));
     const email = screen.getByText(/Email/i);
-    const symbol = screen.getByText(/▲/i);
-    const symbolFalse = screen.queryByText(/▼/i);
+    const symbol = screen.getByText(/↑/i);
+    const symbolFalse = screen.queryByText(/↓/i);
 
     expect(email).toBeInTheDocument();
     expect(symbol).toBeInTheDocument();
@@ -48,21 +48,21 @@ describe('columnNameGenerator', () => {
   });
 
   it('should render Email with descending arrow', () => {
-    const { getByText } = render(columnNameGenerator('Email', 'emailDesc'));
+    render(columnNameGenerator('Email', 'emailDesc'));
     const email = screen.getByText(/Email/i);
-    const symbol = screen.getByText(/▼/i);
-    const symbolFalse = screen.queryByText(/▲/i);
+    const symbol = screen.getByText(/↓/i);
+    const symbolFalse = screen.queryByText(/↑/i);
 
     expect(email).toBeInTheDocument();
     expect(symbol).toBeInTheDocument();
     expect(symbolFalse).not.toBeInTheDocument();
   });
 
-  it('should render Email without arrow', () => {
-    const { getByText } = render(columnNameGenerator('Email', ''));
-    const email = screen.getByText(/Email/i);
-    const symbol1 = screen.queryByText(/▼/i);
-    const symbol2 = screen.queryByText(/▲/i);
+  it('should render Email with both arrows', () => {
+    render(columnNameGenerator('Email', ''));
+    const email = screen.getByText(/Email ⇅/i);
+    const symbol1 = screen.queryByText(/↓/i);
+    const symbol2 = screen.queryByText(/↑/i);
 
     expect(email).toBeInTheDocument();
     expect(symbol1).not.toBeInTheDocument();
@@ -70,10 +70,10 @@ describe('columnNameGenerator', () => {
   });
 
   it('should render Phone Number with ascending arrow', () => {
-    const { getByText } = render(columnNameGenerator('Phone Number', 'phoneAsc'));
+    render(columnNameGenerator('Phone Number', 'phoneAsc'));
     const phone = screen.getByText(/Phone Number/i);
-    const symbol = screen.getByText(/▲/i);
-    const symbolFalse = screen.queryByText(/▼/i);
+    const symbol = screen.getByText(/↑/i);
+    const symbolFalse = screen.queryByText(/↓/i);
 
     expect(phone).toBeInTheDocument();
     expect(symbol).toBeInTheDocument();
@@ -81,21 +81,21 @@ describe('columnNameGenerator', () => {
   });
 
   it('should render Phone Number with descending arrow', () => {
-    const { getByText } = render(columnNameGenerator('Phone Number', 'phoneDesc'));
+    render(columnNameGenerator('Phone Number', 'phoneDesc'));
     const phone = screen.getByText(/Phone Number/i);
-    const symbol = screen.getByText(/▼/i);
-    const symbolFalse = screen.queryByText(/▲/i);
+    const symbol = screen.getByText(/↓/i);
+    const symbolFalse = screen.queryByText(/↑/i);
 
     expect(phone).toBeInTheDocument();
     expect(symbol).toBeInTheDocument();
     expect(symbolFalse).not.toBeInTheDocument();
   });
 
-  it('should render Phone Number without arrow', () => {
-    const { getByText } = render(columnNameGenerator('Phone Number', ''));
-    const phone = screen.getByText(/Phone Number/i);
-    const symbol1 = screen.queryByText(/▼/i);
-    const symbol2 = screen.queryByText(/▲/i);
+  it('should render Phone Number with both arrows', () => {
+    render(columnNameGenerator('Phone Number', ''));
+    const phone = screen.getByText(/Phone Number ⇅/i);
+    const symbol1 = screen.queryByText(/↓/i);
+    const symbol2 = screen.queryByText(/↑/i);
 
     expect(phone).toBeInTheDocument();
     expect(symbol1).not.toBeInTheDocument();

@@ -2,7 +2,6 @@ import "@testing-library/jest-dom";
 import {
   render,
   fireEvent,
-  cleanup,
   waitFor,
   screen,
 } from "@testing-library/react";
@@ -146,7 +145,7 @@ describe("UserList", () => {
   it("should sort users by name in asc order when the appropriate element is clicked", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Name"));
+    fireEvent.click(screen.getByText(/Name ⇅/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(/Ervin Howell|Leanne Graham/);
@@ -158,8 +157,8 @@ describe("UserList", () => {
   it("should sort users by name in desc order when the appropriate element is clicked twice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Name"));
-    fireEvent.click(screen.getByText("Name ▲"));
+    fireEvent.click(screen.getByText(/Name ⇅/i));
+    fireEvent.click(screen.getByText(/Name ↑/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(/Ervin Howell|Leanne Graham/);
@@ -171,9 +170,9 @@ describe("UserList", () => {
   it("should sort users by name in asc order when the appropriate element is clicked thrice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Name"));
-    fireEvent.click(screen.getByText("Name ▲"));
-    fireEvent.click(screen.getByText("Name ▼"));
+    fireEvent.click(screen.getByText(/Name ⇅/i));
+    fireEvent.click(screen.getByText(/Name ↑/i));
+    fireEvent.click(screen.getByText(/Name ↓/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(/Ervin Howell|Leanne Graham/);
@@ -185,7 +184,7 @@ describe("UserList", () => {
   it("should sort users by email in asc order when the appropriate element is clicked", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Email"));
+    fireEvent.click(screen.getByText(/Email ⇅/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(
@@ -199,8 +198,8 @@ describe("UserList", () => {
   it("should sort users by email in desc order when the appropriate element is clicked twice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Email"));
-    fireEvent.click(screen.getByText("Email ▲"));
+    fireEvent.click(screen.getByText(/Email ⇅/i));
+    fireEvent.click(screen.getByText(/Email ↑/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(
@@ -214,9 +213,9 @@ describe("UserList", () => {
   it("should sort users by email in asc order when the appropriate element is clicked thrice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Email"));
-    fireEvent.click(screen.getByText("Email ▲"));
-    fireEvent.click(screen.getByText("Email ▼"));
+    fireEvent.click(screen.getByText(/Email ⇅/i));
+    fireEvent.click(screen.getByText(/Email ↑/i));
+    fireEvent.click(screen.getByText(/Email ↓/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(
@@ -230,7 +229,7 @@ describe("UserList", () => {
   it("should sort users by phone number in asc order when the appropriate element is clicked", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Phone Number"));
+    fireEvent.click(screen.getByText(/Phone Number ⇅/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(
@@ -244,8 +243,8 @@ describe("UserList", () => {
   it("should sort users by phone number in desc order when the appropriate element is clicked twice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Phone Number"));
-    fireEvent.click(screen.getByText("Phone Number ▲"));
+    fireEvent.click(screen.getByText(/Phone Number ⇅/i));
+    fireEvent.click(screen.getByText(/Phone Number ↑/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(
@@ -259,9 +258,9 @@ describe("UserList", () => {
   it("should sort users by phone number in asc order when the appropriate element is clicked thrice", async () => {
     render(<UserList />);
 
-    fireEvent.click(screen.getByText("Phone Number"));
-    fireEvent.click(screen.getByText("Phone Number ▲"));
-    fireEvent.click(screen.getByText("Phone Number ▼"));
+    fireEvent.click(screen.getByText(/Phone Number ⇅/i));
+    fireEvent.click(screen.getByText(/Phone Number ↑/i));
+    fireEvent.click(screen.getByText(/Phone Number ↓/i));
 
     await waitFor(() => {
       const sortedUsers = screen.getAllByText(

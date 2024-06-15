@@ -68,10 +68,10 @@ describe("UserDetails", () => {
   
     it("renders the user company details when props are passed", () => {
       const {getByText} = render(<UserDetails isOpen={true} onClose={onClose} data={basicUserDetails}/>);
-      const userCompany = getByText('Company');
+      const userCompany = getByText(/Company/i);
       expect(userCompany).toBeInTheDocument();
   
-      const userSummary = getByText('We do it');
+      const userSummary = getByText(/We do it/i);
       expect(userSummary).toBeInTheDocument();
     })
   
